@@ -22,15 +22,17 @@ public class EquCategoryDaoTest {
     @Test
     public void testAdd(){
         EquCategory equCategory = new EquCategory();
-        equCategory.setPid(1);
-        equCategory.setName("灯光器材");
-        equCategory.setDescription("灯光所需器材");
+        equCategory.setPid(0);
+        equCategory.setName("影视器材");
+        equCategory.setDescription("摄影/灯光所需器材");
         EquCategory save = dao.save(equCategory);
         Assert.assertNotNull(save);
     }
     @Test
     public void testFind(){
-        EquCategory equCategory = new EquCategory();
-        equCategory.setPid(1);
+        Optional<EquCategory> byId = dao.findById(2);
+        if(byId.isPresent()){
+            System.out.println(byId.get());
+        }
     }
 }

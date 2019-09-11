@@ -75,7 +75,11 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.28</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <!-- 版本号可以不用指定，Spring Boot会选用合适的版本 -->
+        </dependency>
         <!-- springboot分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
