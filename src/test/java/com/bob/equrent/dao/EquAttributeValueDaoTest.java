@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EquAttributeValueDaoTest {
+
     @Autowired
     private EquAttributeValueDao equAttributeValueDao;
 
