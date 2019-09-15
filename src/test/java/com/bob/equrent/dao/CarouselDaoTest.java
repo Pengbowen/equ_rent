@@ -47,7 +47,7 @@ public class CarouselDaoTest {
     @Test
     public void findAllByEnableOrderBySortDesc() {
 
-        List<Carousel> bySortDesc = dao.findAllByEnableOrderBySortDesc(true);
+        List<Carousel> bySortDesc = dao.findAllByEnableOrderBySortAsc(true);
         System.out.println(bySortDesc);
     }
 }
