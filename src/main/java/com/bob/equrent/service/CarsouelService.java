@@ -5,6 +5,7 @@ import com.bob.equrent.entity.Carousel;
 import com.bob.equrent.entity.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,8 +14,11 @@ public class CarsouelService {
     @Autowired
     private CarouselDao dao;
 
+
     public ResponseData<List<Carousel>> listAll(){
         List<Carousel> all = dao.findAll();
         return new ResponseData<>(20000,"成功",all);
     }
+
+
 }

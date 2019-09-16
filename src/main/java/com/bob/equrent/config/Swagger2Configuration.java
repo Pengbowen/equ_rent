@@ -11,6 +11,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
+/**
+ * 文档api生成配置
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2Configuration {
