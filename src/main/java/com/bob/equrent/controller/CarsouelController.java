@@ -6,10 +6,7 @@ import com.bob.equrent.service.CarsouelService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("carsouel")
@@ -28,5 +25,11 @@ public class CarsouelController {
     @ApiOperation(value = "更新轮播图设置")
     public ResponseData update(Carousel carousel){
         return service.update(carousel);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ApiOperation(value = "根据id删除轮播图信息")
+    public ResponseData delete(@PathVariable("id") int id){
+        return service.delele(id);
     }
 }

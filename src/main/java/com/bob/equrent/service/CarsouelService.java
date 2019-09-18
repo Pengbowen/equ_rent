@@ -27,5 +27,10 @@ public class CarsouelService {
         return  new ResponseData(20000,"成功",null);
     }
 
+    public ResponseData delele(int id){
+        dao.deleteById(id);
+        return new ResponseData(20000,"删除成功",null);
+    }
+
 
 }

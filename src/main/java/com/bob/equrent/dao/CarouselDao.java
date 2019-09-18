@@ -9,7 +9,4 @@ import java.util.List;
 
 public interface CarouselDao extends JpaRepository<Carousel,Integer> {
     List<Carousel> findAllByEnableOrderBySortAsc(boolean enable);
-//    @Modifying
-//    @Query("update carsouel set sort = ? where id = ?")
-//    void updateEnableById(int id,boolean sort);
 }
