@@ -31,6 +31,19 @@ public class CarsouelService {
         dao.deleteById(id);
         return new ResponseData(20000,"删除成功",null);
     }
+    @Transactional()
+    public void addNewCarsouel(String src,String savePath){
+        Carousel carousel = new Carousel();
+        carousel.setEnable(false);
+        Integer maxSort = dao.findLastSortNum();
+        if (maxSort == null){
+            maxSort = 0;
+        }
+        carousel.setSort(maxSort+1);
+        carousel.setPath(savePath);
+        carousel.setSrc(src);
+        dao.save(carousel);
+    }
 
 
 }

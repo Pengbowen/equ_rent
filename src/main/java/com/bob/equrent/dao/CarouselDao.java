@@ -9,4 +9,11 @@ import java.util.List;
 
 public interface CarouselDao extends JpaRepository<Carousel,Integer> {
     List<Carousel> findAllByEnableOrderBySortAsc(boolean enable);
+
+    /**
+     * 查询最后一个排序编号
+     * @return
+     */
+    @Query(value = "select max(sort) as sort from Carousel ")
+    Integer findLastSortNum();
 }
