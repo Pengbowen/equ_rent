@@ -1,12 +1,13 @@
 package com.bob.equrent.controller;
 
 import com.bob.equrent.entity.ResponseData;
+import com.bob.equrent.entity.RouterMenu;
+import com.bob.equrent.entity.RouterMenuMeta;
 import com.bob.equrent.service.RouterMenuService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("router")
@@ -16,10 +17,16 @@ public class RouterMenuController {
     @Autowired
     private RouterMenuService service;
 
-    @RequestMapping("listAll")
+    @GetMapping("listAll")
     @ApiOperation(value = "查询所有的主菜单路由")
     public ResponseData findAll(){
         return service.findAllParentRouterMenu();
     }
 
+    @PostMapping("addParentRouter")
+    @ApiOperation(value = "添加新的菜单路由")
+    public ResponseData addParentRouter( @RequestBody RouterMenu routerMenu){
+        //routerMenu.setMeta(meta);
+        return service.addParentRouter(routerMenu);
+    }
 }

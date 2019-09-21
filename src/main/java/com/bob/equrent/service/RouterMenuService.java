@@ -14,10 +14,25 @@ public class RouterMenuService {
     @Autowired
     private RouterMenuDao dao;
 
-
+    /**
+     * 查询所有的父菜单路由
+     * @return
+     */
     public ResponseData findAllParentRouterMenu(){
         List<RouterMenu> parentMenus = dao.findAllByPid(0);
         return new ResponseData(20000,"成功",parentMenus);
+    }
+
+    /**
+     * 添加新的菜单路由
+     * @param routerMenu
+     * @return
+     */
+    public ResponseData addParentRouter(RouterMenu routerMenu){
+            routerMenu.setId(null);
+            routerMenu.setPid(0);
+        RouterMenu save = dao.save(routerMenu);
+        return new ResponseData(20000,"添加成功",save);
     }
 
 }
