@@ -5,6 +5,7 @@ import com.bob.equrent.entity.ResponseData;
 import com.bob.equrent.entity.RouterMenu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,6 +34,12 @@ public class RouterMenuService {
             routerMenu.setPid(0);
         RouterMenu save = dao.save(routerMenu);
         return new ResponseData(20000,"添加成功",save);
+    }
+
+    @Transactional
+    public ResponseData deleteRouterById(Integer id){
+        dao.deleteByIdIsOrPidIs(id,id);
+        return new ResponseData(20000,"删除成功",null);
     }
 
 }

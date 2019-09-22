@@ -9,4 +9,6 @@ public interface RouterMenuDao extends JpaRepository<RouterMenu,Integer> {
 
     List<RouterMenu> findAllByPid(int pid);
 
+    void deleteByIdIsOrPidIs(Integer id,Integer pid);
+
 }

@@ -29,4 +29,10 @@ public class RouterMenuController {
         //routerMenu.setMeta(meta);
         return service.addParentRouter(routerMenu);
     }
+
+    @DeleteMapping("delete/{id}")
+    @ApiOperation(value = "根据id删除菜单以及子菜单")
+    public ResponseData delteRouter(@PathVariable("id") Integer id){
+        return service.deleteRouterById(id);
+    }
 }

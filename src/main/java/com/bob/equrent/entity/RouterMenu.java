@@ -45,7 +45,7 @@ public class RouterMenu {
     private Integer sort;
 
     //路由元数据
-    @OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "meta_id")
     private RouterMenuMeta meta;
 
