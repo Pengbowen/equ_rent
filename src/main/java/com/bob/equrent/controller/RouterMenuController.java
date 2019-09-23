@@ -26,7 +26,6 @@ public class RouterMenuController {
     @PostMapping("addParentRouter")
     @ApiOperation(value = "添加新的菜单路由")
     public ResponseData addParentRouter( @RequestBody RouterMenu routerMenu){
-        //routerMenu.setMeta(meta);
         return service.addParentRouter(routerMenu);
     }
 
@@ -34,5 +33,10 @@ public class RouterMenuController {
     @ApiOperation(value = "根据id删除菜单以及子菜单")
     public ResponseData delteRouter(@PathVariable("id") Integer id){
         return service.deleteRouterById(id);
+    }
+
+    @PutMapping("update")
+    public ResponseData updateRouter(@RequestBody RouterMenu routerMenu){
+        return service.updateRouter(routerMenu);
     }
 }

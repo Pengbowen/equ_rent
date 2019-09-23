@@ -36,10 +36,22 @@ public class RouterMenuService {
         return new ResponseData(20000,"添加成功",save);
     }
 
+    /**
+     * 根据id删除菜单一级其子菜单
+     * @param id
+     * @return
+     */
     @Transactional
     public ResponseData deleteRouterById(Integer id){
         dao.deleteByIdIsOrPidIs(id,id);
         return new ResponseData(20000,"删除成功",null);
+    }
+
+
+
+    public ResponseData updateRouter(RouterMenu routerMenu){
+        RouterMenu save = dao.save(routerMenu);
+        return new ResponseData(20000,"更新成功",save);
     }
 
 }
