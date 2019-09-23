@@ -29,9 +29,11 @@ public class RouterMenuService {
      * @param routerMenu
      * @return
      */
-    public ResponseData addParentRouter(RouterMenu routerMenu){
-            routerMenu.setId(null);
+    public ResponseData addRouter(RouterMenu routerMenu){
+        routerMenu.setId(null);
+        if(routerMenu.getPid() == null){
             routerMenu.setPid(0);
+        }
         RouterMenu save = dao.save(routerMenu);
         return new ResponseData(20000,"添加成功",save);
     }

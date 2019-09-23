@@ -25,8 +25,8 @@ public class RouterMenuController {
 
     @PostMapping("addParentRouter")
     @ApiOperation(value = "添加新的菜单路由")
-    public ResponseData addParentRouter( @RequestBody RouterMenu routerMenu){
-        return service.addParentRouter(routerMenu);
+    public ResponseData addRouter( @RequestBody RouterMenu routerMenu){
+        return service.addRouter(routerMenu);
     }
 
     @DeleteMapping("delete/{id}")
