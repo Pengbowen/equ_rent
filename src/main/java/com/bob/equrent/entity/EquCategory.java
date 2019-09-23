@@ -28,14 +28,13 @@ public class EquCategory {
     private Integer sort;
     //图标
     @Column
-    private String icon;
+    private String picture;
     //描述
     @Column
     private String description;
 
     //子类集合
-    @OneToMany(targetEntity=EquCategory.class,fetch=FetchType.EAGER)
-    @JoinColumn(name="pid",referencedColumnName="id")
-    private List<EquCategory> subEquCategroyList;
+    @OneToMany(mappedBy = "pid")
+    private List<EquCategory> children;
 
 }
