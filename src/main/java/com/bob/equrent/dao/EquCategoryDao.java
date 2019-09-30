@@ -12,4 +12,6 @@ public interface EquCategoryDao extends JpaRepository<EquCategory,Integer> {
      * @return
      */
     List<EquCategory> findAllByPid(int pid);
+
+    void deleteByIdIsOrPidIs(int id,int pid);
 }

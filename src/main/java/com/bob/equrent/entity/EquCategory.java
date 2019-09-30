@@ -26,7 +26,7 @@ public class EquCategory {
     //排序
     @Column
     private Integer sort;
-    //图标
+    //图片
     @Column
     private String picture;
     //描述
